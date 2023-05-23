@@ -1,0 +1,38 @@
+<!--box size-->
+
+var boxWidth = 400
+var boxHeight = 600
+
+// box position (centered)
+var boxX = (width - boxWidth) / 2
+var boxY = (height - boxHeight) / 2
+
+// box colors
+var boxColor1 = color(255, 255, 255) // white
+var boxColor2 = color(0, 0, 0) // black
+
+// text parameters
+var textX = boxX + 20 // leave some margin on the sides
+var textY = boxY + 20 // leave some margin on the top
+var textWidth = boxWidth - 40 // leave some margin on the sides
+var textHeight = boxHeight - 40 // leave some margin on the bottom
+var headerFont = createFont("Arial", 16) // font and size
+var subheaderFont = createFont("Arial", 12) // font and size
+var bodyFont = createFont("Arial", 10) // font and size
+var headerColor = color(0, 0, 0) // black
+var subheaderColor = color(0, 0, 0) // black
+var bodyColor = color(0, 0, 0) // black
+
+// text
+var header = "Bay v.1 Pygame Run Attempts"
+var subheader = "how many times will i try to make the game work before it actually works?"
+var body = "i'm not sure, but i'm going to try a lot of times. i'm going to try so many times that i'm going to get sick of trying. i'm going to try so many times that i'm going to want to give up. but i'm not going to give up. i'm going to keep tryi... the ai cut off there, but i can see that it is very determined. this is promising."
+
+// draw the box
+fill(boxColor1)
+rect(boxX, boxY, boxWidth, boxHeight)
+// border
+stroke(boxColor2)
+strokeWeight(2)
+noFill()
+rect(boxX, boxY, boxWidth, boxHeight)

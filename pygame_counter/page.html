@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bay of Verses Run Attempts</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+<body>
+    <div class="container">
+        <h1>Bay v.1 Pygame Run Attempts</h1>
+        <hr>
+        <h2>how many times will i try to make the game work before it actually works?</h2>
+        <hr>
+            <p>
+            <q>i'm not sure, but i'm going to try a lot of times. i'm going to try so many times that i'm going to get sick of trying. i'm going to try so many times that i'm going to want to give up. but i'm not going to give up. i'm going to keep tryi...</q> 
+            the ai cut off there, but i can see that it is very determined. this is promising.
+            </p>
+        <hr>
+    
+    <!--make the button-->
+    <button onclick="newRunAttempt()">run main.py again</button>
+    
+    <!--make the counter-->
+        <p><b>Run Attempts:</b></p>
+        <p id="counter"><b>0</b></p>
+        <!--make the button function-->
+        <script>
+            var counter = 0;
+            function newRunAttempt() {
+                counter++;
+                document.getElementById("counter").innerHTML = counter;
+            }
+        </script>
+
+    <form>
+        <label for="note">Note on runs:</label>
+        <input type="text" id="note" name="note" placeholder="Enter a note"> <br>
+        <label for="fileSelect1">Primary Focus:</label>
+        <select name="fileSelect1" id="fileSelect1">
+            <option value="none" selected>none</option> <!--default-->
+            <option value="constants.py">constants.py</option>
+            <option value="main.py">main.py</option>
+            <option value="levels.py">levels.py</option>
+            <option value="player.py">player.py</option>
+            <option value="platforms.py">platforms.py</option>
+        </select> <br>
+        <label for="fileSelect2">Secondary Focus:</label>
+        <select name="fileSelect2" id="fileSelect2">
+            <option value="none" selected>none</option> <!--default-->
+            <option value="constants.py">constants.py</option>
+            <option value="main.py">main.py</option>
+            <option value="levels.py">levels.py</option>
+            <option value="player.py">player.py</option>
+            <option value="platforms.py">platforms.py</option>
+        </select> <br>
+        <label for="fileSelect3">Tertiary Focus:</label>
+        <select name="fileSelect3" id="fileSelect3">
+            <option value="none" selected>none</option> <!--default-->
+            <option value="constants.py">constants.py</option>
+            <option value="main.py">main.py</option>
+            <option value="levels.py">levels.py</option>
+            <option value="player.py">player.py</option>
+            <option value="platforms.py">platforms.py</option>
+        </select> <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!--reset button-->
+    <button onclick="resetFunction()">Reset Attempts</button>
+        <!--make the reset take user entries-->
+        <script>
+            function resetFunction() {
+                var reset = prompt("Type 'note' to record a note on these runs, or type 'cancel' to cancel. Press 'Enter' to reset to 0 without a note.");
+                    if (reset == null || reset == "") {
+                        var mostRecent = counter;
+                        document.getElementById("mostRecent").innerHTML = mostRecent;
+                        counter = 0;
+                        document.getElementById("counter").innerHTML = counter;
+
+                        var newHistoryItem = mostRecent + " run(s)";
+                        var listAddition = document.createElement("li");
+                            listAddition.textContent = newHistoryItem;
+                        document.getElementById("history").appendChild(listAddition);
+
+                    }
+                    else if (reset == "note") {
+                        var mostRecent = counter;
+                        document.getElementById("mostRecent").innerHTML = mostRecent;
+                        counter = 0;
+                        document.getElementById("counter").innerHTML = counter;
+
+                        var note = prompt("Enter a note about this reset, or type 'cancel'."); //make the note take user entries
+                        if (note == null || note == "") {
+                            alert("You didn't type anything. Please type a note or 'cancel'.");
+                        var note = prompt("Enter a note about this reset, or type 'cancel'.");
+                        }
+                        else if (note == "cancel") {
+                            note = "";
+                            var newHistoryItem = mostRecent + " run(s)";
+                            var listAddition = document.createElement("li");
+                                listAddition.textContent = newHistoryItem;
+                            document.getElementById("history").appendChild(listAddition);
+
+                            alert("Okay, I won't add a note.");
+                        }
+                        else if (note != null || note != "" || note != "cancel") {
+                            var newHistoryItem = mostRecent + " run(s) - " + note;
+                            var listAddition = document.createElement("li");
+                                listAddition.textContent = newHistoryItem;
+                            document.getElementById("history").appendChild(listAddition);
+
+                            alert("Note added.");
+                        }
+                    else if (reset == "cancel") {
+                        alert("Okay, I won't reset.");
+                    }
+                    else {
+                        alert("You didn't type 'note' or 'cancel'. Please type 'note' or 'cancel', or press 'Enter' to leave no note.");
+                    }
+                
+            } }
+        </script>
+        
+        <!--record the most recent attempt count before reset-->
+        <p>Most Recent Attempt Count Before Reset:</p>
+        <p id="mostRecent">0</p>
+        <!--make the number update-->
+        <script>
+            var mostRecent = counter;
+            document.getElementById("mostRecent").innerHTML = mostRecent;
+        </script>
+
+
+
+
+        <hr> <!--all reset/note entry combinations-->
+        <p><b>Attempt Count/Notes Log:</b></p>
+        <ol id = "history">
+            
+        </ol>
+
+        <script>
+            var undoStorage = "";
+            var olderStorage = "";
+        </script>
+
+
+        <!--clear history-->
+        <button onclick="clearHistory()">Clear History</button>
+        <script>
+            function clearHistory() {
+                if ("history" == null || "history" == "") { // if there is no history to clear
+                    alert("There is no history to clear.");
+                }
+                else { // if there is current history
+                    if (undoStorage == null || undoStorage == "") { // if there is no undoStorage
+                        undoStorage = document.getElementById("history").innerHTML; // make the current history the undoStorage
+                        document.getElementById("history").innerHTML = ""; // clear the current history
+                    }
+                    else if (undoStorage != null || undoStorage != "") { // if there is already undoStorage
+                        olderStorage = undoStorage; // make the current history the olderStorage
+                        undoStorage = document.getElementById("history").innerHTML // make the current history the undoStorage
+                        document.getElementById("history").innerHTML = ""; // clear the current history
+                    }
+                }   
+            }
+        </script>
+        <!--restore history-->
+        <button onclick="restoreHistory()">Restore Recent History</button>
+        <script>
+            function restoreHistory() {
+                if (undoStorage == null || undoStorage == "") { // if there is no history to restore
+                    alert("There is no history to restore."); 
+                }
+                else if ("history" != null || "history" != "") { // if there is current history
+                    document.getElementById("history").innerHTML += undoStorage; // add the undoStorage to the current history
+                }
+                else {
+                    document.getElementById("history").innerHTML = undoStorage; // make the undoStorage the current history
+                }
+
+            }
+        </script>
+
+        <!--restore older history-->
+        <button onclick="restoreOlderHistory()">Restore Older History</button>
+        <script>
+            function restoreOlderHistory() {
+                if (olderStorage == null || olderStorage == "") { // if there is no older history
+                    alert("There is no older history to restore.");
+                }
+                else if ("history" != null || "history" != "") { // if there is current history
+                    document.getElementById("history").innerHTML += olderStorage; // add the older history to the current history
+                }
+                else { // if there is no current history
+                    document.getElementById("history").innerHTML = olderStorage; // make the older history the current history
+                }
+            }
+        </script>
+        <hr>
+        <!--add option to append history to txt file-->
+        <button onclick="appendHistory()">Append History to attemptLog.txt</button>
+        <script>
+            // set the file location
+            var logFile = "D://code/webdev/attemptLog.txt"
+            var FileSystemHandler = new ActiveXObject("Scripting.FileSystemObject");
+
+            function appendHistory() {
+                if ("history" == null || "history" == "") { // if there is no history to add
+                    alert("There is no history to add to the log file.");
+                }
+                else { // if history is present add it to the log file
+                    var historyToAdd = document.getElementById("history").innerHTML;
+                    FileSystemHandler.OpenTextFile(logFile, 8, true).WriteLine(historyToAdd);
+                    clearHistory();
+                }
+            }
+        </script>
+
+
+        </div>
+    </body>
+
+</html>

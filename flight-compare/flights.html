@@ -1,0 +1,86 @@
+<!-- A web app for comparing flights -->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"> <!-- character encoding -->
+        <title>Flight Comparisons</title>
+        <link rel="stylesheet" href="style.css"> <!-- link to css stylesheet -->
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Compare ye flights here.</h1>
+            <div class="innerContainer">
+                <h3>Flight 1</h3>
+                <p>Enter flight information below.</p>
+                <hr>
+                <form action="flights.php" method="post"> <!-- create a form -->
+
+                    <label for="departure1">Departure:</label> <br><br> <!-- label for departure -->
+                        <label for="d1_airline">Airline:</label> <!-- label for airline -->
+                            <input type="text" name="d1_airline" id="d1_airline" required> <br> <!-- input for airline -->
+                        <label for="d1_departure">Depart Time:</label>
+                            <input type="datetime-local" name="d1_departure" id="d1_departure" required> <br>
+                        <label for="d1_arrival">Arrival Time:</label>
+                            <input type="datetime-local" name="d1_arrival" id="d1_arrival" required> <br>
+                    
+                    <br><br>
+
+                    <label for="arrival1">Arrival:</label> <br><br> <!-- label for arrival -->
+                        <label for="a1_airline">Airline:</label> <!-- label for airline -->
+                            <input type="text" name="a1_airline" id="a1_airline" required> <br> <!-- input for airline -->
+                        <label for="a1_departure">Depart Time:</label>
+                            <input type="datetime-local" name="a1_departure" id="a1_departure" required> <br>
+                        <label for="a1_arrival">Arrival Time:</label>
+                            <input type="datetime-local" name="a1_arrival" id="a1_arrival" required> <br>
+                        <br><br>
+                        <label for="price1">Price:</label> <br><br> <!-- label for price -->
+                            <input type="number" name="price1" id="price1" required> <br> <!-- input for price -->
+                    
+                    <br>
+
+                    <button type="submit" name="submit1">Submit</button> <!-- submit button -->
+
+                </form>
+            </div> <!-- end of innerContainer -->
+
+            <div class="innerContainer">
+                <h3>Flight 2</h3>
+                <p>Enter flight information below.</p>
+                <hr>
+                <form action="flights.php" method="post"> <!-- create a form -->
+
+                    <label for="departure2">Departure:</label> <br><br> <!-- label for departure -->
+                        <label for="d2_airline">Airline:</label> <!-- label for airline -->
+                            <input type="text" name="d2_airline" id="d2_airline" required> <br> <!-- input for airline -->
+                        <label for="d2_departure">Depart Time:</label>
+                            <input type="datetime-local" name="d2_departure" id="d2_departure" required> <br>
+                        <label for="d2_arrival">Arrival Time:</label>
+                            <input type="datetime-local" name="d2_arrival" id="d2_arrival" required> <br>
+                    
+                    <br><br>
+
+                    <label for="arrival2">Arrival:</label> <br><br> <!-- label for arrival -->
+                        <label for="a2_airline">Airline:</label> <!-- label for airline -->
+                            <input type="text" name="a2_airline" id="a2_airline" required> <br> <!-- input for airline -->
+                        <label for="a2_departure">Depart Time:</label>
+                            <input type="datetime-local" name="a2_departure" id="a2_departure" required> <br>
+                        <label for="a2_arrival">Arrival Time:</label>
+                            <input type="datetime-local" name="a2_arrival" id="a2_arrival" required> <br>
+                        <br><br>
+                        <label for="price2">Price:</label> <br><br> <!-- label for price -->
+                            <input type="number" name="price2" id="price2" required> <br> <!-- input for price -->
+                    
+                    <br>
+
+                    <button type="submit" name="submit2">Submit</button> <!-- submit button -->
+
+                </form>
+            </div> <!-- end of innerContainer -->
+
+        </div> <!-- end of container -->
+    </body>
+
+</html>

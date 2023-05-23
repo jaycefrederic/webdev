@@ -1,0 +1,169 @@
+/* styling for the container */
+.container {
+    background-color: #a0a0a0;
+    color: #000000;
+    padding: 14px;
+    border-radius: 5px;
+    border: 4px solid #555555;
+}
+
+/* styling for headings */
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    font-size: 36px;
+}
+h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #222222;
+    font-size: 24px;
+}
+
+/* styling for the horizontal rule */
+hr {
+    border: 1px solid #555555;
+    margin-bottom: 25px;
+}
+
+/* styling for the paragraph */
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+/* styling for the buttons */
+button {
+    /* center the buttons */
+    padding-top: 14px;
+    display: block;
+    /* give the buttons some width */
+    width: auto;
+    /* make the buttons look the same */
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px;
+    /* add some space between the buttons */
+    margin-bottom: 14px;
+    /* change the font of the text */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    /* change the color of the text */
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* styling for the buttons when hovering */
+button:hover {
+    background-color: #555555;
+    cursor: move;
+}
+
+/* styling for the list */
+ol {
+    list-style-type: auto;
+    padding: auto;
+    margin-top: 14px;
+    margin-bottom: 24px;
+    /* create borders around the list items */
+    border: none;
+}
+
+/* styling for the bullets and list items */
+li {
+    padding: auto;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    /* add bullets */
+    /* list-style-type: decimal; */
+    /* make bulleted numbers bold */
+    list-style-type: lower-roman;
+    list-style-position: inherit;
+    }
+
+/* form styling */
+form {
+    /* give the form some width */
+    width: fit-content;
+    /* make the form look the same */
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 14px;
+    /* add some space between the form and the buttons */
+    margin-bottom: 14px;
+    /* change the font of the text */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    /* change the color of the text */
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/*styling for the input fields */
+input {
+    /* make the input fields look the same */
+    border: 1px solid #000000;
+    outline: none;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #888888;
+    color: #ffffff;
+    /* add some space between the input fields */
+    margin: 8px;
+    /* change the color of the placeholder text */
+}
+
+::placeholder {
+    color: #cccccc;
+}
+
+/* styling for dropdown menus */
+select {
+    /* make the dropdown menus look the same */
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 2px;
+    /* add some space between the dropdown menus */
+    margin: 8px;
+    /* change the color of the text */
+    color: #ffffff;
+    /* change the color of the dropdown menu options */
+    background-color: #888888;
+}
+
+/* styling for the dropdown menu options */
+option {
+    /* change the font of the text */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    /* change the color of the text */
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* styling for submit button */
+input[type=submit] {
+    /* give the submit button some width */
+    width: fit-content;
+    /* make the submit button look the same */
+    border: 1px solid #000000;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
+    /* add some space between the submit button and the input fields */
+    margin: 8px;
+    /* change the font of the text */
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    /* change the color of the text */
+    background-color: #888888;
+    color: #ffffff;
+}
